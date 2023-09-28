@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const { PORT } = require('./config/serverConfig');
 const apiRoutes = require('./routes/index');
 
+const db = require('./models/index');
+
+const {User, Role} = require('./models/index');
 // const {User} = require('./models/index');
 // const bcrypt = require('bcrypt');
 // const UserRepository = require('./repository/user_repository');
@@ -21,6 +24,20 @@ const prepareAndStartServer = async() => {
 
     app.listen(PORT, async()=>{
         console.log('Server started on port: ', PORT);
+
+        if(process.env.DB_SYNC){
+            db.sequelize.sync({alter:true});
+        }
+
+        const u1 = await User.findByPk(4);
+        const r1 = await Role.findByPk(3);
+        // u1.addRole(r1);
+                            // u1.getRoles();
+                            // r1.getUsers();
+        const response = await u1.hasRole(r1);
+        console.log(response);
+
+
 
         // const service = new UserService();
         // const newToken = service.createToken({email:'jha00256@gmail.com', id:1});
