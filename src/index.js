@@ -22,14 +22,14 @@ const prepareAndStartServer = async() => {
     app.listen(PORT, async()=>{
         console.log('Server started on port: ', PORT);
 
-        const service = new UserService();
-        const newToken = service.createToken({email:'jha00256@gmail.com', id:1});
-        console.log("new token is", newToken);
+        // const service = new UserService();
+        // const newToken = service.createToken({email:'jha00256@gmail.com', id:1});
+        // console.log("new token is", newToken);
 
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpoYTAwMjU2QGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE2OTU3Mjg2ODksImV4cCI6MTY5NTcyODcxOX0.7RzuG6lnH02G9MphAkdlcmEKU2apa542eaD2bOF8pm4';
-        // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpoYTAwMjU2QGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE2OTU3MjgzNjgsImV4cCI6MTY5NTczMTk2OH0.vZIxbj9zuTfzkYLxthvKWtPqNliZNd41VfBwPnghPB8';
-        const response =  service.verifyToken(token);
-        console.log(response);
+        // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpoYTAwMjU2QGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE2OTU3Mjg2ODksImV4cCI6MTY5NTcyODcxOX0.7RzuG6lnH02G9MphAkdlcmEKU2apa542eaD2bOF8pm4';
+        // // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpoYTAwMjU2QGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE2OTU3MjgzNjgsImV4cCI6MTY5NTczMTk2OH0.vZIxbj9zuTfzkYLxthvKWtPqNliZNd41VfBwPnghPB8';
+        // const response =  service.verifyToken(token);
+        // console.log(response);
 
         // const repo = new UserRepository();
         // const response = await repo.getById(1);
